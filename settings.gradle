@@ -1,0 +1,3 @@
+include ':tayeh-client'
+include ':app'
+rootProject.name = "Tayeh client"
