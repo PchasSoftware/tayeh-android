@@ -5,7 +5,7 @@ import ir.pchas.tayehclient.model.Reminder
 import ir.pchas.tayehclient.model.SubUserStatus
 import java.util.*
 
-data class SubUser(
+public data class SubUser(
     val id: Int,
     val instance_id: Int,
     val instance: Instance,

@@ -21,6 +21,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    kotlinOptions {
+        freeCompilerArgs += '-Xexplicit-api=warning'
+    }
 }
 
 dependencies {

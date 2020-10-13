@@ -1,21 +1,21 @@
 package ir.pchas.tayehclient.model
 
-enum class Sex {
+public enum class Sex {
     MALE, FEMALE, NA
 }
 
-enum class UserRole {
+public enum class UserRole {
     USER, MANAGER, ADMIN
 }
 
-enum class SubUserStatus {
+public enum class SubUserStatus {
     PENDING, ACCEPTED, REJECTED
 }
 
-enum class InvoiceType {
+public enum class InvoiceType {
     SOLD, BOUGHT
 }
 
-enum class TransactionType {
+public enum class TransactionType {
     BUY, SELL, INCOME, COST
 }

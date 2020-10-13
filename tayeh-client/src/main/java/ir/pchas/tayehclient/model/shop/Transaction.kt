@@ -3,7 +3,7 @@ package ir.pchas.tayehclient.model.shop
 import ir.pchas.tayehclient.model.Reminder
 import ir.pchas.tayehclient.model.TransactionType
 
-data class Transaction(
+public data class Transaction(
     val id: Int,
     val transactionNo: Int,
     val instanceId: Int,

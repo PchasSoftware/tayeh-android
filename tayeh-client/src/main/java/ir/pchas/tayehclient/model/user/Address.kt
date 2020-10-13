@@ -3,7 +3,7 @@ package ir.pchas.tayehclient.model.user
 import ir.pchas.tayehclient.model.Reminder
 import ir.pchas.tayehclient.model.shop.Instance
 
-data class Address(
+public data class Address(
     val id: Int,
     val provinceId: Int,
     val cityId: Int,

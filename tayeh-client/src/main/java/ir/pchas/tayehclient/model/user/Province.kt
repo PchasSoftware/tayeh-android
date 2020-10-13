@@ -3,7 +3,7 @@ package ir.pchas.tayehclient.model.user
 import ir.pchas.tayehclient.model.shop.Instance
 import java.util.*
 
-data class Province(
+public data class Province(
     val id: Int,
     val name: String,
     val addresses: List<Address>,

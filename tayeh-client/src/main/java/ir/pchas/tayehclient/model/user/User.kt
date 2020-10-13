@@ -4,7 +4,7 @@ import ir.pchas.tayehclient.model.*
 import ir.pchas.tayehclient.model.shop.*
 import java.util.*
 
-data class User(
+public data class User(
     val id: Int,
     val name: String,
     val sex: Sex,

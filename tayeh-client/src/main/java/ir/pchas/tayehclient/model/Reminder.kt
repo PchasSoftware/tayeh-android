@@ -1,5 +1,5 @@
 package ir.pchas.tayehclient.model
 
-data class Reminder(
+public data class Reminder(
     val id: Int
 )

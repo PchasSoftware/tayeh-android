@@ -7,7 +7,7 @@ import ir.pchas.tayehclient.model.user.Customer
 import ir.pchas.tayehclient.model.user.User
 import java.util.*
 
-data class Media(
+public data class Media(
     val id: Int,
     val name: String,
     val description: String,

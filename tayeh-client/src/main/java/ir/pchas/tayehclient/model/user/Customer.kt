@@ -5,7 +5,7 @@ import ir.pchas.tayehclient.model.shop.Instance
 import ir.pchas.tayehclient.model.shop.Invoice
 import java.util.*
 
-data class Customer(
+public data class Customer(
     val id: Int,
     val name: String,
     val sex: Sex,
