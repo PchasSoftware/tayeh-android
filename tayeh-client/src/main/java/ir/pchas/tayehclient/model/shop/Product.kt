@@ -2,7 +2,7 @@ package ir.pchas.tayehclient.model.shop
 
 import ir.pchas.tayehclient.model.Reminder
 
-data class Product(
+public data class Product(
     val id: Int,
     val name: String,
     val description: String,

@@ -3,7 +3,7 @@ package ir.pchas.tayehclient.model.shop
 import ir.pchas.tayehclient.model.user.User
 import java.util.*
 
-data class Subscription(
+public data class Subscription(
     val id: Int,
     val user_id: Int,
     val user: User,

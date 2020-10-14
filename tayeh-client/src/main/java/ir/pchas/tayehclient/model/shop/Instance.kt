@@ -2,7 +2,7 @@ package ir.pchas.tayehclient.model.shop
 
 import ir.pchas.tayehclient.model.user.Address
 
-data class Instance(
+public data class Instance(
     val id: Int,
     val name: String,
     val credit: Int,

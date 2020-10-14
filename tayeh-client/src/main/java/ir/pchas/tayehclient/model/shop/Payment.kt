@@ -3,7 +3,7 @@ package ir.pchas.tayehclient.model.shop
 import ir.pchas.tayehclient.model.user.User
 import java.util.*
 
-data class Payment(
+public data class Payment(
     val id: Int,
     val amount: Int,
     val url: String,

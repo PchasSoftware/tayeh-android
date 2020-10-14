@@ -3,7 +3,7 @@ package ir.pchas.tayehclient.model.shop
 import ir.pchas.tayehclient.model.Reminder
 import ir.pchas.tayehclient.model.user.Customer
 
-data class Invoice(
+public data class Invoice(
     val id: Int,
     val invoice_number: Int,
     val fileId: Int,

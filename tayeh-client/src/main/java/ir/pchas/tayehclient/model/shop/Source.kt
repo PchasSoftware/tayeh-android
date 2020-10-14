@@ -2,7 +2,7 @@ package ir.pchas.tayehclient.model.shop
 
 import java.util.*
 
-data class Source(
+public data class Source(
     val id: Int,
     val toTransaction_id: Int,
     val toTransaction: Transaction,
