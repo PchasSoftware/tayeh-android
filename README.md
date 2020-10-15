@@ -96,7 +96,7 @@ Method title|Input Arguments|Output
 | `getUserInstances` | | `Instance`
 ### Media:
 Method title|Input Arguments|Outputs
-|-|-|-|-|-
+|-|-|-
 | `getMedia` | `media_id:  Int`| `Media`
 | `createMedia` | `media:  Media`| -
 ## ![contribution](https://img.icons8.com/cotton/40/crowdfunding.png) Contribution:
