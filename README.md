@@ -50,55 +50,55 @@ We start the guide here...
 ### Instance:
 Method title|Input Arguments| output
 |-|-|-
-| getInstance |instanceId: Int| `Instance`
-| createInstance |instance: Instance|
-| updateInstance |instance: Instance|
-| getInstancePage |pageNumber:  Int | `Int`
-| getInstanceProducts |instanceId:  Int | `List<Product>`
-| createInstanceProduct |instanceId:  Int, product:  Product |
-| deleteInstanceProduct |instanceId:  Int, productId:  Int|
-| updateInstanceProduct |instanceId:  Int, product:  Product|
-| getInstanceTransactions |instanceId:  Int| `List<Transaction>`
-| findInstanceTransactions |instanceId:  Int| `List<Transaction>`
-| getProductTransactions |instanceId:  Int, productId:  Int| `List<Transaction>`
-| deleteInstanceTransaction |instanceId:  Int, transactionId:  Int|
-| createInstanceTransaction |instanceId:  Int, transaction:  Transaction|
-| updateInstanceTransaction |instanceId:  Int, transaction:  Transaction|
-| getInstanceInvoices |instanceId:  Int| `List<Invoice>`
-| getInstanceInvoice |instanceId:  Int, invoiceId:  Int| `Invoice`
-| deleteInstanceInvoice |instanceId:  Int, invoiceId:  Int|
-| createInstanceInvoice |instanceId:  Int, invoice:  Invoice|
-| updateInstanceInvoice |instanceId:  Int, invoice:  Invoice|
-| getInstanceSeries |instanceId:  Int| `List<Instance>`
-| getInstanceTotal |instanceId:  Int| `List<Instance>`
-| getInstanceRevenue |instanceId:  Int| `List<Instance>`
-| getInstanceCustomers |instanceId:  Int| `List<Customer>`
-| getInstanceCustomer |instanceId:  Int, customerId:  Int| `Customer`
-| deleteInstanceCustomer |instanceId:  Int, customerId:  Int|
-| createInstanceCustomer |instanceId:  Int, customer:  Customer|
-| updateInstanceCustomer |instanceId:  Int, customer:  Customer|
-| getInstanceUsers |instanceId:  Int| `List<SubUser>`
-| getInstanceUser |instanceId:  Int, userId:  Int)| `SubUser`
-| deleteInstanceUser |instanceId:  Int, userId:  Int|
-| createInstanceUser |instanceId:  Int, user:  User|
-| updateInstanceUser |instanceId:  Int, user:  User|
-| getInstanceAddresses |instanceId:  Int| `List<Address>`
-| deleteInstanceAddress |instanceId:  Int, addressId:  Int|
-| createInstanceAddress |instanceId:  Int, address:  Address|
-| updateInstanceAddress |instanceId:  Int, address:  Address|
+| `getInstance` |`instanceId: Int`| `Instance`
+| `createInstance` |`instance: Instance`|
+| `updateInstance` |`instance: Instance`|
+| `getInstancePage` |`pageNumber:  Int` | `Int`
+| `getInstanceProducts` |`instanceId:  Int` | `List<Product>`
+| `createInstanceProduct` |`instanceId:  Int, product:  Product` |
+| `deleteInstanceProduct` |`instanceId:  Int, productId:  Int`|
+| `updateInstanceProduct` |`instanceId:  Int, product:  Product`|
+| `getInstanceTransactions` |`instanceId:  Int`| `List<Transaction>`
+| `findInstanceTransactions` |`instanceId:  Int`| `List<Transaction>`
+| `getProductTransactions` |`instanceId:  Int, productId:  Int`| `List<Transaction>`
+| `deleteInstanceTransaction` |`instanceId:  Int, transactionId:  Int`|
+| `createInstanceTransaction` |`instanceId:  Int, transaction:  Transaction`|
+| `updateInstanceTransaction` |`instanceId:  Int, transaction:  Transaction`|
+| `getInstanceInvoices` |`instanceId:  Int`| `List<Invoice>`
+| `getInstanceInvoice` |`instanceId:  Int, invoiceId:  Int`| `Invoice`
+| `deleteInstanceInvoice` |`instanceId:  Int, invoiceId:  Int`|
+| `createInstanceInvoice` |`instanceId:  Int, invoice:  Invoice`|
+| `updateInstanceInvoice` |`instanceId:  Int, invoice:  Invoice`|
+| `getInstanceSeries` |`instanceId:  Int`| `List<Instance>`
+| `getInstanceTotal` |`instanceId:  Int`| `List<Instance>`
+| `getInstanceRevenue` |`instanceId:  Int`| `List<Instance>`
+| `getInstanceCustomers` |`instanceId:  Int`| `List<Customer>`
+| `getInstanceCustomer` |`instanceId:  Int, customerId:  Int`| `Customer`
+| `deleteInstanceCustomer` |`instanceId:  Int, customerId:  Int`|
+| `createInstanceCustomer` |`instanceId:  Int, customer:  Customer`|
+| `updateInstanceCustomer` |`instanceId:  Int, customer:  Customer`|
+| `getInstanceUsers` |`instanceId:  Int`| `List<SubUser>`
+| `getInstanceUser` |`instanceId:  Int, userId:  Int`)| `SubUser`
+| `deleteInstanceUser` |`instanceId:  Int, userId:  Int`|
+| `createInstanceUser` |`instanceId:  Int, user:  User`|
+| `updateInstanceUser` |`instanceId:  Int, user:  User`|
+| `getInstanceAddresses` |`instanceId:  Int`| `List<Address>`
+| `deleteInstanceAddress` |`instanceId:  Int, addressId:  Int`|
+| `createInstanceAddress` |`instanceId:  Int, address:  Address`|
+| `updateInstanceAddress` |`instanceId:  Int, address:  Address`|
 
 ### User:
 Method title|Input Arguments|Output
 |-|-|-
-| getUserMe | | `SubUser`
-| getInstancePrimary || `Instance`
-| createInstancePrimary |instance: Instance |
-| getUserInstances | | `Instance`
+| `getUserMe` | | `SubUser`
+| `getInstancePrimary` || `Instance`
+| `createInstancePrimary` |`instance: Instance` |
+| `getUserInstances` | | `Instance`
 ### Media:
 Method title|Input Arguments|Outputs
 |-|-|-|-|-
-| getMedia | media_id:  Int| `Media`
-| createMedia | media:  Media| -
+| `getMedia` | `media_id:  Int`| `Media`
+| `createMedia` | `media:  Media`| -
 ## ![contribution](https://img.icons8.com/cotton/40/crowdfunding.png) Contribution:
 Contributions are welcome. Please submit an issue if you see something broken or in need of improving.
 You can also contact us through the communication channels mentioned in [Tayeh](https://tayeh.ir/) and [Pchas Company](https://pchas.ir/) websites.
