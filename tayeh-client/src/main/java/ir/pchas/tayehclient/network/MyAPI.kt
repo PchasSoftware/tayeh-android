@@ -31,6 +31,12 @@ internal interface MyAPI {
         }
     }
 
+    @GET("api/token")
+    fun getToken(
+        @Header("API_KEY") apiKey: String,
+        @Header("API_SECRET") apiSecret: String
+    ): String
+
     @GET("user/me")
     suspend fun getUserMe(@Header("Authorization") tokenString: String): User
 
@@ -190,37 +196,29 @@ internal interface MyAPI {
 
     // Customer
 
-    @GET("$INSTANCE/{id}/customers")
-    fun getInstanceCustomers(
+    @GET("$CUSTOMER/{id}/me")
+    fun getCustomerMe(
         @Path("id") instanceId: Int,
-        @Header("Authorization") tokenString: String
-    ): List<Customer>
-
-    @GET("$INSTANCE/{id}/$CUSTOMER/{customer_id}")
-    fun getInstanceCustomer(
-        @Path("id") instanceId: Int,
-        @Path("customer_id") customerId: Int,
         @Header("Authorization") tokenString: String
     ): Customer
 
-    @DELETE("$INSTANCE/{id}/$CUSTOMER/{customer_id}")
-    fun deleteInstanceCustomer(
-        @Path("id") instanceId: Int,
-        @Path("customer_id") customerId: Int,
-        @Header("Authorization") tokenString: String
-    )
-
-    @POST("$INSTANCE/{id}/$CUSTOMER")
-    fun createInstanceCustomer(
+    @POST("$CUSTOMER/{id}/register")
+    fun registerCustomer(
         @Path("id") instanceId: Int,
         @Body customer: Customer,
         @Header("Authorization") tokenString: String
     )
 
-    @POST("$INSTANCE/{id}/$CUSTOMER/update")
-    fun updateInstanceCustomer(
+    @POST("$CUSTOMER/{id}/login")
+    fun loginCustomer(
         @Path("id") instanceId: Int,
         @Body customer: Customer,
+        @Header("Authorization") tokenString: String
+    )
+
+    @POST("$CUSTOMER/referenter/mobile")
+    fun setReferenterCustomer(
+        @Body mobileNumber: String,
         @Header("Authorization") tokenString: String
     )
 

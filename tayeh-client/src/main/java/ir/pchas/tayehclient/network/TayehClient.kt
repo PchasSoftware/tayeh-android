@@ -12,15 +12,15 @@ import java.io.IOException
 import kotlin.jvm.Throws
 
 public class TayehClient(
-    public val APIKey: String,
-    public val APISecret: String,
+    APIKey: String,
+    APISecret: String,
 ) {
 
     private var token: String? = null
     private var tokenString = "Bearer $token"
 
     init {
-        TODO("Get user token")
+        token = MyAPI().getToken(APIKey, APISecret)
     }
 
     @Throws(IOException::class)
@@ -122,24 +122,20 @@ public class TayehClient(
 
     // Customer
     @Throws(IOException::class)
-    public fun getInstanceCustomers(instanceId: Int): List<Customer> =
-        MyAPI().getInstanceCustomers(instanceId, tokenString)
+    public fun getInstanceCustomers(instanceId: Int): Customer =
+        MyAPI().getCustomerMe(instanceId, tokenString)
 
     @Throws(IOException::class)
-    public fun getInstanceCustomer(instanceId: Int, customerId: Int): Customer =
-        MyAPI().getInstanceCustomer(instanceId, customerId, tokenString)
+    public fun registerCustomer(instanceId: Int, customer: Customer): Unit =
+        MyAPI().registerCustomer(instanceId, customer, tokenString)
 
     @Throws(IOException::class)
-    public fun deleteInstanceCustomer(instanceId: Int, customerId: Int): Unit =
-        MyAPI().deleteInstanceCustomer(instanceId, customerId, tokenString)
+    public fun loginCustomer(instanceId: Int, customer: Customer): Unit =
+        MyAPI().loginCustomer(instanceId, customer, tokenString)
 
     @Throws(IOException::class)
-    public fun createInstanceCustomer(instanceId: Int, customer: Customer): Unit =
-        MyAPI().createInstanceCustomer(instanceId, customer, tokenString)
-
-    @Throws(IOException::class)
-    public fun updateInstanceCustomer(instanceId: Int, customer: Customer): Unit =
-        MyAPI().updateInstanceCustomer(instanceId, customer, tokenString)
+    public fun setReferenterCustomer(mobileNumber: String): Unit =
+        MyAPI().setReferenterCustomer(mobileNumber, tokenString)
 
     // User
     @Throws(IOException::class)
