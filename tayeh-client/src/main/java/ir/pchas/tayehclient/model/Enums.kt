@@ -1,21 +1,45 @@
 package ir.pchas.tayehclient.model
 
-public enum class Sex {
-    MALE, FEMALE, NA
+enum class Sex {
+    MALE,
+    FEMALE,
+    NA,
 }
 
-public enum class UserRole {
-    USER, MANAGER, ADMIN
+enum class UserRole {
+    USER,
+    MANAGER,
+    ADMIN,
 }
 
-public enum class SubUserStatus {
-    PENDING, ACCEPTED, REJECTED
+enum class SubUserStatus {
+    PENDING,
+    ACCEPTED,
+    REJECTED,
 }
 
-public enum class InvoiceType {
-    SOLD, BOUGHT
+enum class InvoiceType {
+    SOLD,
+    BOUGHT,
 }
 
-public enum class TransactionType {
-    BUY, SELL, INCOME, COST
+enum class TransactionType {
+    BUY,
+    SELL,
+    INCOME,
+    COST,
+}
+
+enum class ProductType {
+    TOP_SELL,
+    NEW,
+    TODAY
+}
+
+enum class ProductSort(val title: String, val persianTitle: String){
+    FRESH("fresh", "جدیدترین ها"),
+    LOW_PRICE("price_low_2_high", "کمترین قیمت"),
+    HIGH_PRICE("price_high_2_low", "بیشترین قیمت"),
+    DISCOUNT("discount", "بیشترین تخفیف"),
+    BEST_SELLER("bestsellers", "بیشترین فروش")
 }
