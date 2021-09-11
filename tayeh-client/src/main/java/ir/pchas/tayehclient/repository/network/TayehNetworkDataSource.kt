@@ -15,18 +15,21 @@ import javax.inject.Inject
 public class TayehNetworkDataSource @Inject constructor(
     private val tayehAPI: TayehAPI,
     private val preferencesManager: PreferencesManager,
-    private var INSTANCE_ID: Int,
-    private var TOKEN: String,
 ) {
     private var token = ""
+    private var instanceId = 0
     private val preferencesFlow = preferencesManager.preferencesFlow
 
-    public suspend fun retrieveToken(): Unit = withContext(Dispatchers.IO) {
+    public suspend fun retrieveToken(instanceToken: String): Unit = withContext(Dispatchers.IO) {
         token = preferencesFlow.first().token
         if (token.isEmpty()) {
-            token = TOKEN
+            token = instanceToken
             preferencesManager.saveToken(token)
         }
+    }
+
+    public fun retrieveInstanceId(myInstanceId: Int) {
+        instanceId = myInstanceId
     }
 
     private suspend fun saveNewToken(newToken: String) = withContext(Dispatchers.IO) {
@@ -37,7 +40,7 @@ public class TayehNetworkDataSource @Inject constructor(
     public suspend fun getMainBanners(): List<Banner>? {
         var banners: List<Banner>? = null
         try {
-            banners = tayehAPI.getMainBanners(token, INSTANCE_ID)
+            banners = tayehAPI.getMainBanners(token, instanceId)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -47,7 +50,7 @@ public class TayehNetworkDataSource @Inject constructor(
     public suspend fun getBrandBanners(): List<Banner>? {
         var banners: List<Banner>? = null
         try {
-            banners = tayehAPI.getBrandBanners(token, INSTANCE_ID)
+            banners = tayehAPI.getBrandBanners(token, instanceId)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -57,7 +60,7 @@ public class TayehNetworkDataSource @Inject constructor(
     public suspend fun getCategoryBanners(): List<Banner>? {
         var banners: List<Banner>? = null
         try {
-            banners = tayehAPI.getCategoryBanners(token, INSTANCE_ID)
+            banners = tayehAPI.getCategoryBanners(token, instanceId)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -189,7 +192,7 @@ public class TayehNetworkDataSource @Inject constructor(
 
     public suspend fun getBestsellerProducts(): Result<List<Product>> =
         try {
-            val products = tayehAPI.getBestsellerProducts(token, INSTANCE_ID).products
+            val products = tayehAPI.getBestsellerProducts(token, instanceId).products
             Result.Success(products)
         } catch (e: Exception) {
             Result.Error(e)
@@ -197,7 +200,7 @@ public class TayehNetworkDataSource @Inject constructor(
 
     public suspend fun getFreshProducts(): Result<List<Product>> =
         try {
-            val products = tayehAPI.getFreshProducts(token, INSTANCE_ID).products
+            val products = tayehAPI.getFreshProducts(token, instanceId).products
             Result.Success(products)
         } catch (e: Exception) {
             Result.Error(e)
@@ -205,7 +208,7 @@ public class TayehNetworkDataSource @Inject constructor(
 
     public suspend fun getSuggestedProducts(): Result<List<Product>> =
         try {
-            val products = tayehAPI.getSuggestedProducts(token, INSTANCE_ID).products
+            val products = tayehAPI.getSuggestedProducts(token, instanceId).products
             Result.Success(products)
         } catch (e: Exception) {
             Result.Error(e)
@@ -241,7 +244,7 @@ public class TayehNetworkDataSource @Inject constructor(
 
     public suspend fun sendLoginSMSCode(mobileNumber: String): Result<String> =
         try {
-            val loginRequest = LoginRequest(INSTANCE_ID, mobileNumber, null)
+            val loginRequest = LoginRequest(instanceId, mobileNumber, null)
             tayehAPI.sendLoginSMSCode(loginRequest)
             Result.Success("ok")
         } catch (e: Exception) {
@@ -251,7 +254,7 @@ public class TayehNetworkDataSource @Inject constructor(
 
     public suspend fun verifyCode(mobileNumber: String, passCode: String): Result<String> =
         try {
-            val loginRequest = LoginRequest(INSTANCE_ID, mobileNumber, passCode)
+            val loginRequest = LoginRequest(instanceId, mobileNumber, passCode)
             val newToken = tayehAPI.verifyCode(loginRequest).token
             saveNewToken("Bearer $newToken")
             saveLoginStatus(true)
@@ -293,7 +296,7 @@ public class TayehNetworkDataSource @Inject constructor(
             ProductPagingSource(
                 tayehAPI = tayehAPI,
                 token = token,
-                instanceId = INSTANCE_ID,
+                instanceId = instanceId,
                 search = query,
                 sort = sort,
                 min_price = min_price,
@@ -325,7 +328,7 @@ public class TayehNetworkDataSource @Inject constructor(
     public suspend fun getTopSearch(): List<String> {
         var list = listOf<String>()
         try {
-            list = tayehAPI.getTopSearch(token, INSTANCE_ID)
+            list = tayehAPI.getTopSearch(token, instanceId)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -335,7 +338,7 @@ public class TayehNetworkDataSource @Inject constructor(
     public suspend fun getSearchFilters(): SearchFilterResponse? {
         var responce: SearchFilterResponse? = null
         try {
-            responce = tayehAPI.getInstanceSearchFilters(token, INSTANCE_ID)
+            responce = tayehAPI.getInstanceSearchFilters(token, instanceId)
         } catch (e: Exception) {
             e.printStackTrace()
         }

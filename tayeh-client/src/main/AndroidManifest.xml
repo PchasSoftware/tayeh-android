@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ir.pchas.tayeh_client">
 
-    /
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
